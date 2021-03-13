@@ -1,6 +1,6 @@
 # podinfo.yaml
 ---
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: podinfo
