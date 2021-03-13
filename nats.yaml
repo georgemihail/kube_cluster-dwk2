@@ -1,27 +1,12 @@
+# podinfo.yaml
+---
+apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  annotations:
-    fluxcd.io/automated: "true"
-    filter.fluxcd.io/prometheus: semver:~2.3
-    filter.fluxcd.io/alertmanager: glob:v0.15.*
-    filter.fluxcd.io/nats: regex:^0.6.*
+  name: podinfo
+  namespace: default
 spec:
-  values:
-    prometheus:
-      image: prom/prometheus:v2.3.1
-    alertmanager:
-      image: prom/alertmanager:v0.15.0
-    nats:
-      image:
-        repository: nats-streaming
-        tag: 0.6.0
-# apiVersion: helm.fluxcd.io/v1
-# kind: HelmRelease
-# metadata:
-#   name: nats
-#   namespace: default
-# spec:
-#   chart:
-#     repository: https://nats-io.github.io/k8s/helm/charts/
-#     name: nats
-#     version: 0.8.1
+  chart:
+    repository: https://stefanprodan.github.io/podinfo
+    name: podinfo
+    version: 3.2.0
