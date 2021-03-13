@@ -1,10 +1,22 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: nats
+  name: chart-from-s3
   namespace: default
 spec:
   chart:
-    repository: https://nats-io.github.io/k8s/helm/charts/
-    name: nats
-    version: 0.8.1
+    repository: s3://bucket-name/charts
+    name: chart
+    version: 0.1.0
+  values:
+    replicaCount: 1
+# apiVersion: helm.fluxcd.io/v1
+# kind: HelmRelease
+# metadata:
+#   name: nats
+#   namespace: default
+# spec:
+#   chart:
+#     repository: https://nats-io.github.io/k8s/helm/charts/
+#     name: nats
+#     version: 0.8.1
