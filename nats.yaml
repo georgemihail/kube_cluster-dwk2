@@ -1,12 +1,10 @@
-# podinfo.yaml
----
-apiVersion: helm.fluxcd.io/v2
+apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: podinfo
+  name: nats
   namespace: default
 spec:
   chart:
-    repository: https://stefanprodan.github.io/podinfo
-    name: podinfo
-    version: 3.2.0
+    repository: https://nats-io.github.io/k8s/helm/charts/
+    name: nats
+    version: 0.8.1
